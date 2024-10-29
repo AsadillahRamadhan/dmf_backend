@@ -5,7 +5,7 @@ export default class extends BaseSchema {
 
   public async up () {
     this.schema.alterTable(this.tableName, (table) => {
-      table.bigInteger('magnet_array_id').unsigned()
+      table.integer('magnet_array_id').unsigned().after('magnet_active')
       table.foreign('magnet_array_id').references('id').inTable('magnet_arrays')
     })
   }
