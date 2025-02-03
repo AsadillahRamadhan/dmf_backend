@@ -7,16 +7,7 @@ export default class Electrolyzer extends BaseModel {
   public id: number
 
   @column()
-  public operationTime: number
-
-  @column()
-  public magnetAvail: boolean
-
-  @column()
-  public rotationRpm: number
-
-  @column()
-  public powerConsume: number
+  public name: string
 
   @hasOne(() => Dmf)
   public dmf: HasOne<typeof Dmf>

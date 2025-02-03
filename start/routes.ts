@@ -19,6 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import '../app/Services/Grpc/IoTService'
 
 Route.get('/', async () => {
   return { hello: 'world' }
@@ -34,4 +35,21 @@ Route.group(() => {
   Route.group(() => {
     Route.resource('/users', 'UsersController').apiOnly()
   })
+  Route.group(() => {
+    Route.resource('/devices', 'DevicesController').apiOnly()
+  })
+  Route.group(() => {
+    Route.resource('/magnets', 'MagnetsController').apiOnly()
+  })
+
+  Route.group(() => {
+    Route.resource('/magnet_arrays', 'MagnetArraysController').apiOnly()
+  })
+  Route.group(() => {
+    Route.resource('/dmfs', 'DmfsController').apiOnly()
+  })
+  Route.group(() => {
+    Route.resource('/electrolyzers', 'ElectrolyzersController').apiOnly()
+  })
+  
 }).prefix('api')

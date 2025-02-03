@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package iot;
+
+service IoTService {
+  rpc SendData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  float operation_time = 1;
+  float rotation_rpm = 2;
+  float power_consume = 3;
+  bool magnet_avail = 4;
+  float magnet_strength = 5;
+  bool magnet_active = 6;
+}
+
+message DataResponse {
+  float rotation_rpm = 1;
+  float magnet_strength = 2;
+  bool magnet_active = 3;
+}

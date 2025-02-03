@@ -7,7 +7,13 @@ export default class MagnetArray extends BaseModel {
   public id: number
 
   @column()
+  public name: string
+
+  @column()
   public magnetAvail: boolean
+
+  @column()
+  public dmfId: number
 
   @hasMany(() => Magnet)
   public magnet: HasMany<typeof Magnet>

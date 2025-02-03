@@ -7,10 +7,16 @@ export default class Magnet extends BaseModel {
   public id: number
 
   @column()
+  public name: string
+
+  @column()
   public magnetStrength: number
 
   @column()
   public magnetActive: boolean
+
+  @column()
+  public magnetArrayId: number
 
   @belongsTo(() => MagnetArray)
   public magnetArray: BelongsTo<typeof MagnetArray>
